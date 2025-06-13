@@ -1,0 +1,120 @@
+/* Show Join Now button only on plans page */
+.plans-page .menu-item.join-now {
+    display: flex;
+}
+
+.plans-intro {
+    padding: 3.125rem 1.875rem;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background: rgba(50, 50, 50, 0.3);
+    margin: 3.6875rem auto 0 auto; /* 59px -> rem */
+}
+
+.plans-intro h2 {
+    font-size: 3rem; /* 48px */
+    margin-top: 0;
+    margin-bottom: 0.9375rem; /* 15px */
+    letter-spacing: 0.09375rem; /* 1.5px */
+    text-transform: uppercase;
+}
+
+.plans-intro .desc {
+    font-size: 1.25rem; /* 20px */
+    color: #f0e6d2;
+}
+
+/* Plan Sections */
+.plan-section {
+    padding: 0.5rem 1.5rem;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    border: 0.125rem solid rgba(255, 255, 255, 0.15); /* 2px */
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.6); /* 20px */
+    backdrop-filter: blur(3px);
+    border-radius: 0.75rem; /* 12px */
+    max-width: 50rem; /* 800px */
+    margin: 0 auto 0.5rem auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Highlighted Plan Section */
+.plan-section.highlight {
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 1.875rem rgba(0, 0, 0, 0.8); /* 30px */
+}
+
+/* Plan Title */
+.plan-section h2 {
+    font-size: 3rem; /* 48px */
+    margin-bottom: 1rem; /* 15px */
+    letter-spacing: 0.09375rem; /* 1.5px */
+    text-transform: uppercase;
+}
+
+/* Plan Description */
+.plan-section .desc {
+    font-size: 1.25rem; /* 20px */
+    color: #bbb;
+}
+
+/* Plan Features */
+.plan-section .features {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 2.5rem 0;
+}
+
+.plan-section .features li {
+    font-size: 1.0625rem; /* 17px */
+    margin-bottom: 0.75rem; /* 12px */
+    color: #eee;
+}
+
+/* Price Box */
+.price-box {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 0.25rem; /* 4px */
+    background: #f39c12;
+    color: white;
+    padding: 0.75rem 1.5rem; /* 12px 24px */
+    border-radius: 0.4rem; /* 6px */
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 1.2rem;
+    box-shadow: 0 0 0.75rem rgba(255, 69, 0, 0.75); /* 12px */
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    animation: pulse 2.5s infinite;
+    white-space: nowrap;
+}
+
+/* Hover effect for price box */
+.price-box:hover {
+    color: #000;
+    background: #ffd500;
+    transform: scale(1.05);
+}
+
+.price-box .period {
+    font-size: 1rem; /* 16px */
+    font-weight: normal;
+    align-self: flex-end;
+}
+
+.plan-section.highlight .price-box {
+    background: #ff4500;
+    animation: pulse-highlight 2.5s infinite;
+}
+
+.plan-section.highlight .price-box:hover {
+    background: #ffd500;
+    transform: scale(1.1); /* Slightly larger scale when hovered */
+}

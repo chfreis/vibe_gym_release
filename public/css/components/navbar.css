@@ -1,0 +1,129 @@
+/* === Main Menu Container === */
+.menu {
+    position: fixed;
+    height: 60px;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* === Menu Group (Centers the Menu Items) === */
+.menu-group {
+    display: flex;
+    gap: 15px;
+    position: absolute;
+    left: 5%;
+    transform: translateX(-5%);
+}
+
+/* === General Menu Item === */
+.menu-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: 'Roboto Condensed', sans-serif;
+    cursor: pointer;
+    color: #f5f5f5;
+    background: transparent;
+    transition: background 0.3s, color 0.3s;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+/* Hover for general menu items */
+.menu-item:hover {
+    background: #f39c12;
+    color: #000;
+}
+
+/* === Special Menu Item: Join Now Button === */
+.menu-item.join-now {
+    display: none;
+    margin-left: auto;
+    background: #ff4500;
+    border-radius: 8px;
+    padding: 10px 15px;
+    box-shadow: 0 0 12px rgba(255, 69, 0, 0.75);
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.menu-item.join-now a {
+    color: white;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Hover for Join Now Button */
+.menu-item.join-now:hover {
+    background: #ffd500;
+    transform: scale(1.05);
+}
+
+.menu-item.join-now:hover a {
+    color: #000;
+}
+
+/* === Menu Items that Have a Dropdown === */
+.menu-item.has-dropdown {
+    cursor: default;            /* No cursor change on hover */
+}
+
+.menu-item.has-dropdown:hover {
+    background: transparent;
+    color: #ffcc80;
+}
+
+/* === Dropdown Menu === */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    min-width: 160px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* When menu-item is hovered, show the dropdown */
+.menu-item:hover .dropdown {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Links inside dropdown */
+.dropdown a {
+    padding: 12px 16px;
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    display: block;
+    background: transparent;
+    border-radius: 6px;
+    margin: 2px 2px;
+    transition: background 0.3s, transform 0.2s ease;
+}
+
+/* Hover effect for dropdown links */
+.dropdown a:hover {
+    background: #f39c12;
+    color: #000;
+}

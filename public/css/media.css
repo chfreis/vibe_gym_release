@@ -1,0 +1,157 @@
+.show-on-sm {
+    /* Visible by default */
+    display: none !important;
+}
+
+.hide-on-sm {
+    /* Hidden by default */
+    display: inline !important;
+}
+
+/* screen size indicator top right corner of the screen */
+.screen-size-debug {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 6px 10px;
+    background: red;
+    color: white;
+    font-size: 14px;
+    font-family: monospace;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* === Media Queries for Smaller Screens === */
+@media (max-width: 768px) {
+
+    .show-on-sm {
+        display: inline !important;     /* Show only on small screens */
+    }
+
+    .hide-on-sm {
+        display: none !important;       /* Hide only on small screens */
+    }
+
+    .screen-size-debug {
+        background: blue;
+    }
+
+    body.index-page .menu-group {
+        gap: 15px;
+    }
+
+    .menu {
+        height: 50px;
+        padding: 8px 12px;
+    }
+
+    .menu-item {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .menu-item.join-now {
+        padding: 8px 12px;
+    }
+
+    .menu-item.join-now a {
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 35px 10px;
+    }
+
+    .section-content {
+        transform: translateY(-5vh);
+    }
+
+    /* New styles for general elements */
+    h1 {
+        font-size: 100px;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 22px;
+    }
+
+    /* New styles for #signup elements */
+    #signup h1 {
+        font-size: 74px;
+        margin-bottom: 10px;
+    }
+
+    #signup p {
+        font-size: 20px;
+    }
+
+    /* Fix image background scaling issues on mobile */
+    .bg-layer.image-bg img {
+        transform: scale(1.3);
+        margin-left: -120px;
+    }
+
+}
+
+/* Media query for smaller screens */
+@media (max-width: 480px) {
+
+    .screen-size-debug {
+        background: green;
+    }
+
+    /* New styles for general elements */
+    h1 {
+        font-size: 74px;
+    }
+
+    h2 {
+        font-size: 22px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    /* New styles for #signup elements */
+    #signup h1 {
+        font-size: 64px;
+        margin-bottom: 5px;
+    }
+
+    #signup p {
+        font-size: 18px;
+    }
+
+    /* Left-align menu items only on index page for small screens using scoped body class */
+    body.index-page .menu-group {
+        position: static;
+        transform: none;
+        justify-content: flex-start; 
+        padding-left: 10px;
+        gap: 15px;
+    }
+
+    /* Tighter override for ultra-small screens */
+    .bg-layer.image-bg img {
+        transform: scale(1.3);
+        margin-left: -100px;
+    }
+}

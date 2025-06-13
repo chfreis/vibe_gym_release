@@ -1,0 +1,32 @@
+/* === Animations === */
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); opacity: 1.1; }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulse-highlight {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Stronger scale for highlighted */
+        opacity: 1.2;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

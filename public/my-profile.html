@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIBE GYM | Meu Perfil</title>
+</head>
+
+<body class="my-profile-page">
+  <!-- Background Image Layer -->
+  <div class="bg-layer image-bg">
+    <img src="assets/images/gym-bg-img01.webp" alt="" />
+    <div class="bg-overlay"></div>
+  </div>
+
+  <!-- Front Layer -->
+  <div class="front-layer">
+    <div data-include="navbar.html"></div>
+    <h1>Meu Cadastro</h1>
+    <p>Gerencie suas informações de cadastro</p>
+    <div id="sections-wrapper" class="sections-wrapper" data-state="view">
+      <section id="profile-view-section" class="section profile-section view-sect">
+        <div class="section-content">
+          <!-- VIEW SECTION -->
+          <div id="profile-view" class="profile-view-grid">
+            <div class="field left-side"><strong>Nome:</strong> <span id="prf-name">N/A</span></div>
+            <div class="field"><strong>CPF:</strong> <span id="prf-cpf">N/A</span></div>
+
+            <div class="field left-side"><strong>Email:</strong> <span id="prf-email">N/A</span></div>
+            <div class="field"><strong>Telefone:</strong> <span id="prf-phone">N/A</span></div>
+
+            <div class="field left-side"><strong>Data Nasc.:</strong> <span id="prf-dob">N/A</span></div>
+            <div class="field"><strong>Gênero:</strong> <span id="prf-gender">N/A</span></div>
+
+            <hr class="view-divider" />
+
+            <div class="field left-side"><strong>Endereço:</strong> <span id="prf-addr">N/A</span></div>
+            <div class="field"><strong>Compl.:</strong> <span id="prf-compl">N/A</span></div>
+
+            <div class="field left-side"><strong>Cidade/UF:</strong> <span id="prf-city-uf">N/A</span></div>
+            <div class="field"><strong>CEP:</strong> <span id="prf-cep">N/A</span></div>
+
+            <hr class="view-divider" />
+
+            <div class="field left-side"><strong>Plano:</strong> <span id="prf-plan">N/A</span></div>
+            <div class="field"><strong>Unidade:</strong> <span id="prf-unit">N/A</span></div>
+          </div>
+          <div class="profile-view-buttons">
+            <button id="edit-btn" type="button" class="edit-btn">✏️<br>Edite<br>Seus Dados</button>
+            <button id="delete-btn" type="button" class="delete-btn" title="Apagar Cadastro e Cancelar Assinatura!">🗑️</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDIT SECTION -->
+      <section id="profile-edit-section" class="section profile-section edit-sect">
+        <div class="section-content">
+          <div data-include="user-register-form.html"></div>
+        </div>
+      </section>
+    </div>
+    <div data-include="confirm-modal.html"></div>
+  </div>
+
+  <script src="js/page-setup.js"></script>
+
+</body>
+</html>

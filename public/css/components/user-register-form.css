@@ -1,0 +1,368 @@
+.form-container {
+    width: 100%;
+    min-width: 600px;
+    border-radius: 8px;
+    padding: 2rem 2.5rem;
+    background: #111;
+    position: relative;             /* For positioning the pseudo-element */
+    box-shadow: 0 0 12px rgba(255, 69, 0, 0.3);
+}
+
+/* Pseudo-element for gradient border */
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff4500, #f39c12);
+    border-radius: 8px;     /* Matches the border radius of the form */
+    z-index: -1;            /* Keeps it behind the form content */
+}
+
+.signup-form {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+/* Column setup in .signup-form */
+.signup-form .column {
+    display: flex;
+    flex-wrap: wrap;            /* To wrap items if necessary */
+    gap: 1rem;                  /* Horizontal space between items */
+}
+
+.signup-form .column>* {
+    flex: 1;
+}
+
+.form-feedback {
+    font-size: 1.2rem;
+    color: #ffcc80;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.25rem;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-feedback.success {
+    color: green;
+    animation: pulse 3s infinite ease-in-out;
+}
+
+.form-feedback.yellow-warn {
+    color: #d8c40f;
+    animation: pulse 3s infinite ease-in-out;
+}
+
+.form-feedback.red-error {
+    color: #c62828;
+    animation: pulse 3s infinite ease-in-out;
+}
+
+.input-wrapper {
+    width: 85%;     
+    display: flex;                  /* Control visible width of the whole input group */
+    flex-direction: column;
+    align-items: flex-start;        /* Keep label/input/error aligned left within */
+}
+
+.error-message {
+    color: red;
+    font-size: 0.85rem;
+    display: block;
+    visibility: hidden;
+}
+
+.error-message.visible {
+    visibility: visible;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.8rem;
+}
+
+.input-box.left-aligned {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;        /* Align to the left */
+    width: 100%;
+}
+
+/* Center the DOB field */
+.input-box.center-aligned {
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* Align to the center */
+    width: 100%;
+}
+
+.input-box.right-aligned {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;      /* Align everything to the right edge of the column */
+    width: 100%;
+}
+
+.input-box label {
+    color: #ccc;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.input-box input,
+.input-box select {
+    position: relative;
+    height: 2rem;
+    width: 85%;
+    padding: 0 10px;
+    font-size: auto;
+    color: #eee;
+    background: #1b1b1b;
+    border: 1px solid #555;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.input-box.special input {
+    position: relative;
+    height: 2rem;
+    padding: 0 10px;
+    font-size: auto;
+    color: #eee;
+    background: #1b1b1b;
+    border: 1px solid #555;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
+    width: 100%;
+}
+
+.input-box input:focus,
+.input-box select:focus {
+    border-color: #ffcc80;
+    color: #fff;                /* White text on focus */
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);         /* Light shadow for focus effect */
+}
+
+.input-box input.input-error,
+.input-box select.input-error {
+    border: 2px solid red;          /* Red border for error */
+    background-color: #4d0000;      /* Dark red background for good contrast */
+}
+
+.input-box input.input-error:focus,
+.input-box select.input-error:focus {
+    border: 2px solid red;          /* Red border for error */
+    background-color: #4d0000;      /* Dark red background for good contrast */
+}
+
+.input-box input[readonly] {
+    border: none;
+    background-color: #1b1b1b;
+    color: #aaa;
+    caret-color: transparent;
+    /* Hides the blinking caret */
+}
+
+.input-box input[readonly]:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+    width: 100%;
+    text-align: left;
+}
+
+.input-wrapper label,
+.input-wrapper .error-message {
+    width: 100%;
+}
+
+.gender-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.gender-box label {
+    color: #ccc;
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+.gender-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.gender {
+    display: flex;
+    align-items: center;
+    column-gap: 0;
+}
+
+.gender input {
+    cursor: pointer;
+    accent-color: #f39c12;
+}
+
+.gender label {
+    cursor: pointer;
+    color: #ccc;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.1rem;
+}
+
+.gender input[type="radio"]:disabled,
+.gender label {
+    cursor: default;
+    pointer-events: none;
+}
+
+/* Divider styling */
+.form-divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, #ff4500, #f39c12);
+    margin: 2rem 0 1rem 0;
+    width: 100%;
+}
+
+.street-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    width: 100%;
+}
+
+.add-box {
+    flex: 1;        /* Ensure Street takes the available space */
+}
+
+.num-box {
+    width: 18%;     /* Adjust width of the number input as needed */
+}
+
+.add2-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 85%;
+}
+
+.add2-box label,
+.add2-box .error-message {
+    align-self: flex-start;
+    width: 100%;
+    text-align: left;
+}
+
+.cep-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* Left half: CEP + State */
+.cep-state-group {
+    display: flex;
+    align-items: flex-end;
+    flex: 1;
+    gap: 1rem;
+}
+
+.cep-box {
+    flex: 0.9;
+}
+
+.state-box {
+    flex: 2.1;
+}
+
+/* Right half: City */
+.city-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex: 1;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;          /* optional: allows stacking on small screens */
+  margin-top: 1.5rem;
+  gap: 6.5rem;
+}
+
+.form-buttons button {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: 900;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 0.1rem;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+}
+
+button.register-btn,
+button.save-btn {
+    background: linear-gradient(135deg, #ff4500, #f39c12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button.register-btn:hover:enabled,
+button.save-btn:hover:enabled {
+    transform: translateY(-5px) scale(1.05);
+    color: black;
+    background-blend-mode: screen;
+    box-shadow: 0 0 1.75rem rgba(255, 69, 0, 0.6), 0 0 0.5rem rgba(243, 156, 18, 0.4);
+    filter: brightness(1.1);
+}
+
+button.cancel-btn {
+    background: linear-gradient(135deg, #a89f91, #837f79);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button.cancel-btn:hover:enabled {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 1.75rem rgba(168, 159, 145, 0.5), 0 0 0.5rem rgba(131, 127, 121, 0.3);
+    color: black;
+}
+
+button:disabled {
+    background: gray;
+    cursor: not-allowed;
+    transform: none;
+    filter: none;
+    box-shadow: none;  
+}
+
+button.removed {
+    display: none;
+}

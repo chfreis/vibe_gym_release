@@ -1,0 +1,151 @@
+/* Confirm Modal Component — shares styling language with other modals */
+.confirm-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}
+
+.confirm-modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.confirm-modal-content {
+    background: #111;
+    color: white;
+    padding: 1.75rem;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    animation: slideIn 0.4s ease-out;
+}
+
+/* Standard Title */
+.confirm-modal-title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.confirm-modal .ttl-t1 {
+    color: #ff4500;
+}
+
+.confirm-modal .ttl-t2 {
+    color: #00b900;
+    margin-bottom: 1.5rem;
+}
+
+.confirm-modal .ttl-t3 {
+    color: #ffcc00;
+}
+
+/* Standard Message */
+.confirm-modal-message {
+    color: #FFD500;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 1.25rem 0;
+}
+
+.confirm-modal .msg-t1 {
+    font-size: 1rem;
+    margin: 1.5rem 0 0 0;
+}
+
+.confirm-modal .msg-t2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.confirm-modal .msg-t3 {
+    font-size: 1.25rem;
+}
+
+.confirm-modal .msg-t4 {
+    color: #ffcc80;
+    font-size: 1.25rem;
+}
+
+.confirm-modal .msg-t5 {
+    font-size: 1rem;
+}
+
+.confirm-modal .msg-t6 {
+    color: #ff4500;
+    font-size: 1rem;
+}
+
+.confirm-modal .msg-t7 {
+    color: #ffcc80;
+}
+
+/* Buttons Container */
+.confirm-modal .actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.75rem;
+    margin-top: 2rem;
+}
+
+/* Standard Button Styles */
+.confirm-modal-button {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ff4500, #f39c12);
+}
+
+.confirm-modal-button:hover:enabled {
+    transform: translateY(-5px) scale(1.05);
+    color: black;
+    box-shadow: 0 0 1.75rem rgba(255, 69, 0, 0.6), 0 0 0.5rem rgba(243, 156, 18, 0.4);
+    filter: brightness(1.1);
+}
+
+/* Cancel Button */
+.confirm-modal .btn-t1 {
+    background: linear-gradient(135deg, #a89f91, #837f79);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.confirm-modal .btn-t1:hover:enabled {
+    box-shadow: 0 0 1.75rem rgba(168, 159, 145, 0.5), 0 0 0.5rem rgba(131, 127, 121, 0.3);
+}
+
+/* Confirm Button */
+.confirm-modal .btn-t2 {
+    background: red;
+}
+
+.confirm-modal .btn-t2:hover:enabled {
+    background-blend-mode: screen;
+    box-shadow: 0 0 1.75rem rgba(255, 69, 0, 0.6),
+        0 0 0.5rem rgba(243, 156, 18, 0.4);
+    filter: brightness(1.1);
+}
+
+/* Other types of Buttons */
+.confirm-modal .solo-btn {
+    flex: 0.5;
+    font-size: 1.25rem;
+}

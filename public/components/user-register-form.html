@@ -1,0 +1,153 @@
+<!-- === user profile form used for registration and edit === -->
+
+<div class="form-container">
+  <h5 id="form-feedback" class="form-feedback"></h5>
+  <form id="registration-form" action="#" class="signup-form">
+
+    <!-- Row 1: CPF + Phone + Birth Date -->
+    <div class="column">
+      <div class="input-box left-aligned">
+        <label for="cpf">CPF:<span style="color: red;">*</span></label>
+        <input type="tel" id="cpf" inputmode="numeric" placeholder="000.000.000-00" maxlength="14" required />
+        <div class="error-message">❌ CPF</div>
+      </div>
+      <div class="input-box center-aligned">
+        <div class="input-wrapper">
+          <label for="dob">Data Nascimento:<span style="color: red;">*</span></label>
+          <input type="date" id="dob" required />
+          <div class="error-message">❌ Data Nascimento</div>
+        </div>
+      </div>
+      <div class="input-box right-aligned">
+        <div class="input-wrapper">
+          <label for="phone">Telefone (opcional):</label>
+          <input type="tel" id="phone" inputmode="numeric" placeholder="(00) 00000-0000" maxlength="15" />
+          <div class="error-message">❌ Telefone</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Email + Full Name -->
+    <div class="column">
+      <div class="input-box name">
+        <label for="name">Nome Completo:<span style="color: red;">*</span></label>
+        <input type="text" id="name" data-db-field-name="full_name" placeholder="Nome" required />
+        <div class="error-message">❌ Nome</div>
+      </div>
+      <div class="input-box right-aligned">
+        <div class="input-wrapper">
+          <label for="email">Email:<span style="color: red;">*</span></label>
+          <input type="email" id="email" placeholder="Email" required />
+          <div class="error-message">❌ Email</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: Plan + Location -->
+    <div class="column">
+      <div class="input-box">
+        <label for="plan">Plano:<span style="color: red;">*</span></label>
+        <select id="plan" required>
+          <option value="" disabled selected>Escolha seu Plano</option>
+          <option value="basico">Básico - R$299,99</option>
+          <option value="premium">Premium - R$449,49</option>
+          <option value="vip">VIP - R$699,99</option>
+        </select>
+        <div class="error-message">❌ Escolha um Plano</div>
+      </div>
+      <div class="input-box right-aligned">
+        <div class="input-wrapper">
+          <label for="location">Unidade:<span style="color: red;">*</span></label>
+          <select id="location" required>
+            <option value="" disabled selected>Escolha sua Unidade</option>
+            <option value="camboinhas">Camboinhas</option>
+            <option value="icarai">Icaraí</option>
+            <option value="itaipu">Itaipu</option>
+            <option value="santarosa">Santa Rosa</option>
+            <option value="saofrancisco">São Francisco</option>
+          </select>
+          <div class="error-message">❌ Escolha uma Unidade</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 4: Gender -->
+    <div class="gender-box">
+      <label>Gênero (opcional):</label>
+      <div id="gender-options" class="gender-options">
+        <div class="gender">
+          <input type="radio" id="gender-male" name="gender" value="M" />
+          <label for="gender-male">Masculino</label>
+        </div>
+        <div class="gender">
+          <input type="radio" id="gender-female" name="gender" value="F" />
+          <label for="gender-female">Feminino</label>
+        </div>
+        <div class="gender">
+          <input type="radio" id="gender-other" name="gender" value="N/A" />
+          <label for="gender-other">Não Declarar</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="form-divider" />
+
+    <!-- Address: CEP + State + City -->
+    <div class="column">
+      <div class="cep-row">
+        <!-- Left side: CEP + State -->
+        <div class="cep-state-group">
+          <div class="input-box cep-box special">
+            <label for="cep">CEP:<span style="color: red;">*</span></label>
+            <input type="tel" id="cep" maxlength="9" inputmode="numeric" placeholder="00000-000" required />
+            <div class="error-message">❌ CEP </div>
+          </div>
+          <div class="input-box state-box special">
+            <label for="state">Estado:<span style="color: red;">*</span></label>
+            <input type="text" id="state" placeholder="Insira seu CEP" readonly disabled />
+            <div class="error-message">❌ Estado</div>
+          </div>
+        </div>
+        <!-- Right side: City -->
+        <div class="input-box city-box right-aligned">
+          <div class="input-wrapper">
+            <label for="city">Cidade:<span style="color: red;">*</span></label>
+            <input type="text" id="city" placeholder="Insira seu CEP" readonly disabled />
+            <div class="error-message">❌ Cidade</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Street + Num + Complement -->
+    <div class="column">
+      <!-- Street + Number in one row -->
+      <div class="street-row">
+        <div class="input-box add-box special">
+          <label for="addressLine1">Endereço:<span style="color: red;">*</span></label>
+          <input type="text" id="addressLine1" data-db-field-name="address_line1" placeholder="Insira seu CEP" readonly disabled />
+          <div class="error-message special">❌ Endereço</div>
+        </div>
+        <div class="input-box num-box special">
+          <label for="addressNum">Número:</label>
+          <input type="tel" id="addressNum" data-db-field-name="address_num" maxlength="4" inputmode="numeric" placeholder="1111" />
+          <div class="error-message">❌Num</div>
+        </div>
+      </div>
+      <!-- Complement aligned right in its own row -->
+      <div class="input-box add2-box">
+        <div class="input-wrapper">
+          <label for="addressLine2">Compl. (opcional):</label>
+          <input type="text" id="addressLine2" data-db-field-name="address_line2" placeholder="Complemento" />
+          <div class="error-message">❌ Complemento</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-buttons">
+      <button id="register-btn" type="submit" class="register-btn removed" disabled>📝<br>Cadastrar</button>
+      <button id="save-btn" type="submit" class="save-btn removed" disabled>💾<br>Salvar<br>Alterações</button>
+      <button id="cancel-btn" type="reset" class="cancel-btn removed">❌<br>Descartar<br>Alterações</button>
+    </div>
+  </form>
+</div>

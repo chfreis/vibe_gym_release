@@ -1,0 +1,62 @@
+<!-- access-modal.html -->
+<div id="access-modal" class="access-modal hidden">
+  <div class="access-modal-content">
+    <span id="close-modal-btn" class="close-button">✖</span>
+
+    <div class="access-modal-header">
+      <p class="p1" id="access-modal-title">Inscreva-se</p>
+      <h4>VIBE GYM</h4>
+      <p class="p4">Insira seu Cpf ou Email</p>
+    </div>
+
+    <!-- Signup Form -->
+    <form id="pre-signup-form" action="signup.html">
+      <div class="form-group">
+
+        <div class="form-input-group">
+          <label for="pre-signup-cpf">CPF:</label>
+          <input id="pre-signup-cpf" data-form="signup" type="tel" maxlength="14" inputmode="numeric"
+            placeholder="CPF" />
+        </div>
+
+        <div class="form-input-group">
+          <label for="pre-signup-email">Email:</label>
+          <input id="pre-signup-email" data-form="signup" type="email" placeholder="EMAIL" />
+        </div>
+
+        <div class="feedback-wrapper">
+          <small id="pre-signup-feedback" class="feedback">
+            Já tem cadastro? <a href="#" id="signup-switch-to-login">Acesse</a>
+          </small>
+        </div>
+
+      </div>
+      <button id="pre-signup-btn" class="solo-btn" type="submit" disabled>INSCREVER-SE</button>
+    </form>
+
+    <!-- Login Form (hidden initially) -->
+    <form id="login-form" class="hidden" action="my-profile.html">
+      <div class="form-group">
+
+        <div class="form-input-group">
+          <label for="login-cpf">CPF:</label>
+          <input id="login-cpf" data-form="login" type="tel" maxlength="14" inputmode="numeric" placeholder="CPF" />
+        </div>
+
+        <div class="form-input-group">
+          <label for="login-email">Email:</label>
+          <input id="login-email" data-form="login" type="email" placeholder="EMAIL" />
+        </div>
+
+        <div class="feedback-wrapper">
+          <small id="login-feedback" class="feedback">
+            Ainda não tem cadastro? <a href="#" id="login-switch-to-signup">Inscreva-se</a>
+          </small>
+        </div>
+
+      </div>
+      <button id="login-btn" class="solo-btn" type="submit" disabled>ACESSAR</button>
+    </form>
+    <div data-include="confirm-modal.html"></div>
+  </div>
+</div>
